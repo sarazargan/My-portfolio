@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Sara Zargan</title>
+</head>
+<body>
+
+<!-- MOBILE HEADER -->
+<header class="mobile-header">
+  <span class="mobile-logo">Sara Zargan</span>
+  <button class="hamburger" onclick="openDrawer()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<!-- MOBILE DRAWER -->
+<div class="mobile-drawer" id="mobileDrawer">
+  <div class="drawer-overlay" onclick="closeDrawer()"></div>
+  <div class="drawer-panel">
+    <button class="drawer-close" onclick="closeDrawer()">✕</button>
+    <div class="profile-section" style="margin-bottom:24px">
+      <div class="available-badge"><span class="available-dot"></span>Available for work</div>
+      <div class="profile-name">Sara Zargan</div>
+      <div class="profile-role">UI/UX Designer</div>
+    </div>
+    <nav class="nav" id="mobileNav">
+      <button class="nav-link active" onclick="navigate('projects'); closeDrawer()">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>
+        Projects
+      </button>
+      <button class="nav-link" onclick="navigate('experience'); closeDrawer()">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
+        Experience
+      </button>
+      <button class="nav-link" onclick="navigate('techstack'); closeDrawer()">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+        Tech Stack
+      </button>
+      <button class="nav-link" onclick="navigate('aboutme'); closeDrawer()">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.582-7 8-7s8 3 8 7"/></svg>
+        About Me
+      </button>
+      <button class="nav-link" onclick="navigate('contact'); closeDrawer()">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        Contact
+      </button>
+    </nav>
+  </div>
+</div>
+
+<!-- LAYOUT -->
+<div class="layout">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="profile-section">
+      <div class="avatar-wrap">
+        <img id="sidebarAvatar" src=".." alt="Sara Zargan" onerror="this.style.display='none'">
+      </div>
+      <div class="available-badge"><span class="available-dot"></span>Available for work</div>
+      <div class="profile-name">Sara Zargan</div>
+      <div class="profile-role">UI/UX Designer</div>
+    </div>
+
+    <div class="nav-label">Menu</div>
+    <nav class="nav" id="desktopNav">
+      <button class="nav-link active" onclick="navigate('projects')">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>
+        Projects
+      </button>
+      <button class="nav-link" onclick="navigate('experience')">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
+        Experience
+      </button>
+      <button class="nav-link" onclick="navigate('techstack')">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+        Tech Stack
+      </button>
+      <button class="nav-link" onclick="navigate('aboutme')">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.582-7 8-7s8 3 8 7"/></svg>
+        About Me
+      </button>
+      <button class="nav-link" onclick="navigate('contact')">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        Contact
+      </button>
+    </nav>
+
+    <div class="sidebar-footer">
+      © 2025 Sara Zargan
+    </div>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main">
+
+    <!-- ===== PROJECTS PAGE ===== -->
+    <section class="page active" id="page-projects">
+      <div class="page-header">
+        <div class="page-eyebrow">Portfolio</div>
+        <h1 class="page-title">Selected Projects</h1>
+        <p class="page-desc">A curated collection of UI/UX design work spanning web platforms, mobile apps, and digital products.</p>
+      </div>
+
+      <div class="filter-row">
+        <button class="filter-btn active" onclick="filterProjects(this, 'all')">All</button>
+        <button class="filter-btn" onclick="filterProjects(this, 'web')">Web Design</button>
+        <button class="filter-btn" onclick="filterProjects(this, 'mobile')">Mobile</button>
+        <button class="filter-btn" onclick="filterProjects(this, 'dashboard')">Dashboard</button>
+      </div>
+
+      <div class="projects-grid">
+        <div class="project-card" data-cat="web" onclick="openAbout('aureum')">
+          <div class="project-thumb-placeholder" style="background: linear-gradient(135deg, #1c3a1c 0%, #2d5a2d 50%, #4a8c4a 100%); color:white; font-size:14px; font-weight:600; letter-spacing:0.05em;">
+            Aureum — Sports Club
+          </div>
+          <div class="project-body">
+            <div class="project-info">
+              <div class="project-tags">
+                <span class="tag">Web Design</span>
+                <span class="tag">Landing Page</span>
+              </div>
+              <div class="project-name">Aureum Sports Club</div>
+              <div class="project-desc">Luxury sports club website where elegance meets athletic excellence. Full landing page with membership flow.</div>
+            </div>
+            <div class="project-arrow">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card" data-cat="dashboard mobile" onclick="openAbout('taskify')">
+          <div class="project-thumb-placeholder" style="background: linear-gradient(135deg, #f5f0ff 0%, #e8d5ff 50%, #d4b8ff 100%); color:#7B61FF;">
+            Taskify — Task Manager
+          </div>
+          <div class="project-body">
+            <div class="project-info">
+              <div class="project-tags">
+                <span class="tag">Dashboard</span>
+                <span class="tag">Mobile App</span>
+                <span class="tag">SaaS</span>
+              </div>
+              <div class="project-name">Taskify</div>
+              <div class="project-desc">Productivity app to manage tasks, boost workflows, and track progress across all devices.</div>
+            </div>
+            <div class="project-arrow">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card" data-cat="dashboard" onclick="openAbout('nebrix')">
+          <div class="project-thumb-placeholder" style="background: linear-gradient(135deg, #0d0d1a 0%, #1a1a40 50%, #2d2d6b 100%); color:#a0a0ff;">
+            Nebrix — Crypto Dashboard
+          </div>
+          <div class="project-body">
+            <div class="project-info">
+              <div class="project-tags">
+                <span class="tag">Dashboard</span>
+                <span class="tag">FinTech</span>
+                <span class="tag">Dark UI</span>
+              </div>
+              <div class="project-name">Nebrix</div>
+              <div class="project-desc">Unified crypto management dashboard for tracking portfolios, wallets, and market trends intelligently.</div>
+            </div>
+            <div class="project-arrow">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== EXPERIENCE PAGE ===== -->
+    <section class="page" id="page-experience">
+      <div class="page-header">
+        <div class="page-eyebrow">Career</div>
+        <h1 class="page-title">Work Experience</h1>
+        <p class="page-desc">My professional journey across product companies and design agencies.</p>
+      </div>
+
+      <div class="exp-list">
+        <div class="exp-item">
+          <div class="exp-logo" style="background:#f0f4ff; font-size:13px; color:#4a6cf7;">NX</div>
+          <div class="exp-content">
+            <div class="exp-header">
+              <div class="exp-role">Senior UI/UX Designer</div>
+              <div class="exp-period">2023 — Present</div>
+            </div>
+            <div class="exp-company">Nexora Digital · Full-time</div>
+            <div class="exp-desc">Lead design for core product suite serving 200k+ users. Own the design system, conduct user research, and collaborate cross-functionally with engineering and product teams to ship high-impact features.</div>
+            <div class="exp-skills">
+              <span class="tag">Figma</span>
+              <span class="tag">Design Systems</span>
+              <span class="tag">User Research</span>
+              <span class="tag">Prototyping</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-logo" style="background:#fff4f0; color:#e05a2b; font-size:13px;">PX</div>
+          <div class="exp-content">
+            <div class="exp-header">
+              <div class="exp-role">Product Designer</div>
+              <div class="exp-period">2021 — 2023</div>
+            </div>
+            <div class="exp-company">Pixelcraft Studio · Full-time</div>
+            <div class="exp-desc">Designed end-to-end experiences for SaaS clients across fintech, e-commerce, and healthcare verticals. Delivered 12+ product redesigns with measurable improvements in user engagement and conversion.</div>
+            <div class="exp-skills">
+              <span class="tag">Product Design</span>
+              <span class="tag">Wireframing</span>
+              <span class="tag">A/B Testing</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-logo" style="background:#f0fff4; color:#2bb537; font-size:13px;">UX</div>
+          <div class="exp-content">
+            <div class="exp-header">
+              <div class="exp-role">UI Designer</div>
+              <div class="exp-period">2019 — 2021</div>
+            </div>
+            <div class="exp-company">Uxbridge Agency · Full-time</div>
+            <div class="exp-desc">Crafted visual interfaces for mobile and web applications. Worked closely with developers to ensure pixel-perfect implementation and collaborated with clients to translate briefs into compelling designs.</div>
+            <div class="exp-skills">
+              <span class="tag">UI Design</span>
+              <span class="tag">Mobile</span>
+              <span class="tag">Illustration</span>
+              <span class="tag">Brand Identity</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-logo" style="background:#fafafa; color:#888; font-size:13px;">FL</div>
+          <div class="exp-content">
+            <div class="exp-header">
+              <div class="exp-role">Freelance Designer</div>
+              <div class="exp-period">2017 — 2019</div>
+            </div>
+            <div class="exp-company">Self-employed</div>
+            <div class="exp-desc">Built branding, landing pages, and mobile app designs for early-stage startups and small businesses. Developed strong client communication skills and the ability to work independently under tight deadlines.</div>
+            <div class="exp-skills">
+              <span class="tag">Branding</span>
+              <span class="tag">Web Design</span>
+              <span class="tag">Client Work</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <div style="background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px 28px;">
+        <div style="font-size:13px; font-weight:500; margin-bottom:16px; color:var(--text-secondary);">Education</div>
+        <div style="display:flex; gap:16px; align-items:flex-start;">
+          <div class="exp-logo" style="background:#f8f0ff; color:#9b59b6; font-size:12px;">BA</div>
+          <div>
+            <div class="exp-role" style="font-size:15px; font-weight:500; margin-bottom:4px;">B.A. Graphic Design</div>
+            <div class="exp-company">University of Arts · 2015 – 2019</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== TECH STACK PAGE ===== -->
+    <section class="page" id="page-techstack">
+      <div class="page-header">
+        <div class="page-eyebrow">Tools & Skills</div>
+        <h1 class="page-title">Tech Stack</h1>
+        <p class="page-desc">The tools, software, and methodologies I use to design great products.</p>
+      </div>
+
+      <div class="stack-section">
+        <div class="stack-section-title">Design Tools</div>
+        <div class="stack-grid">
+          <div class="stack-card">
+            <div class="stack-icon" style="background:#1e1e2e;">
+              <img id="figmaIcon" src="" alt="Figma" onerror="this.parentElement.innerHTML='🎨'">
+            </div>
+            <div class="stack-name">Figma</div>
+            <div class="stack-level">Expert</div>
+          </div>
+          <div class="stack-card">
+            <div class="stack-icon" style="background:#1877f2;">
+              <img id="framerIcon" src="" alt="Framer" onerror="this.parentElement.innerHTML='⚡'">
+            </div>
+            <div class="stack-name">Framer</div>
+            <div class="stack-level">Advanced</div>
+          </div>
+          <div class="stack-card">
+            <div class="stack-icon" style="background:#ff6c37;">🎨</div>
+            <div class="stack-name">Adobe XD</div>
+            <div class="stack-level">Advanced</div>
+          </div>
+          <div class="stack-card">
+            <div class="stack-icon" style="background:#f5a623;">🖼</div>
+            <div class="stack-name">Illustrator</div>
+            <div class="stack-level">Proficient</div>
+          </div>
+          <div class="stack-card">
+            <div class="stack-icon" style="background:#31a8ff;">🖌</div>
+            <div class="stack-name">Photoshop</div>
+            <div class="stack-level">Proficient</div>
+          </div>
+          <div class="stack-card">
+            <div class="stack-icon" style="background:#ff3366;">✏️</div>
+            <div class="stack-name">Sketch</div>
+            <div class="stack-level">Intermediate</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="stack-section">
+        <div class="stack-section-title">Prototyping & Research</div>
+        <div class="stack-grid">
+          <div class="stack-card">
+            <div class="stack-icon" style="background:#6e56cf;">🔮</div>
+            <div class="stack-name">Principle</div>
+            <div class="stack-level">Advanced</div>
+          </div>
+          <div class="stack-card">
+            <div class="stack-icon" style="background:#0066ff;">📊</div>
+            <div class="stack-name">Maze</div>
+            <div class="stack-level">Advanced</div>
+          </div>
+          <div class="stack-card">
+            <div class="stack-icon" style="background:#f5813f;">🔬</div>
+            <div class="stack-name">UserTesting</div>
+            <div class="stack-level">Proficient</div>
+          </div>
+          <div class="stack-card">
+            <div class="stack-icon" style="background:#14b8a6;">📋</div>
+            <div class="stack-name">Miro</div>
+            <div class="stack-level">Expert</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="stack-section">
+        <div class="stack-section-title">Collaboration & Handoff</div>
+        <div class="stack-grid">
+          <div class="stack-card">
+            <div class="stack-icon" style="background:#2da44e;">📁</div>
+            <div class="stack-name">GitHub</div>
+            <div class="stack-level">Familiar</div>
+          </div>
+          <div class="stack-card">
+            <div class="stack-icon" style="background:#0052cc;">📌</div>
+            <div class="stack-name">Jira</div>
+            <div class="stack-level">Proficient</div>
+          </div>
+          <div class="stack-card">
+            <div class="stack-icon" style="background:#e01e5a;">💬</div>
+            <div class="stack-name">Slack</div>
+            <div class="stack-level">Expert</div>
+          </div>
+          <div class="stack-card">
+            <div class="stack-icon" style="background:#000000; border-radius:10px;">◻️</div>
+            <div class="stack-name">Notion</div>
+            <div class="stack-level">Expert</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CONTACT PAGE ===== -->
+    <section class="page" id="page-contact">
+      <div class="page-header">
+        <div class="page-eyebrow">Get in Touch</div>
+        <h1 class="page-title">Let's Work Together</h1>
+        <p class="page-desc">Have a project in mind? I'd love to hear about it. Send a message or reach out through any of the channels below.</p>
+      </div>
+
+      <div class="contact-grid">
+        <a class="contact-card" href="mailto:sara@zargan.design">
+          <div class="contact-icon">✉️</div>
+          <div>
+            <div class="contact-label">Email</div>
+            <div class="contact-value">sara@zargan.design</div>
+          </div>
+        </a>
+        <a class="contact-card" href="#" target="_blank">
+          <div class="contact-icon">🔗</div>
+          <div>
+            <div class="contact-label">LinkedIn</div>
+            <div class="contact-value">Sara Zargan</div>
+          </div>
+        </a>
+        <a class="contact-card" href="#" target="_blank">
+          <div class="contact-icon">🎨</div>
+          <div>
+            <div class="contact-label">Dribbble</div>
+            <div class="contact-value">@sara.zargan</div>
+          </div>
+        </a>
+        <a class="contact-card" href="#" target="_blank">
+          <div class="contact-icon">🅱</div>
+          <div>
+            <div class="contact-label">Behance</div>
+            <div class="contact-value">Sara Zargan</div>
+          </div>
+        </a>
+      </div>
+
+      <div class="contact-form">
+        <div class="form-title">Send a Message</div>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">First Name</label>
+            <input class="form-input" type="text" placeholder="Jane">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Last Name</label>
+            <input class="form-input" type="text" placeholder="Doe">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Email</label>
+          <input class="form-input" type="email" placeholder="jane@example.com">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Subject</label>
+          <input class="form-input" type="text" placeholder="Project inquiry...">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Message</label>
+          <textarea class="form-textarea" placeholder="Tell me about your project..."></textarea>
+        </div>
+        <button class="btn-primary" onclick="sendMsg()">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+          Send Message
+        </button>
+      </div>
+    </section>
+
+
+    <!-- ===== ABOUT ME PAGE ===== -->
+    <section class="page" id="page-aboutme">
+      <div class="page-header">
+        <div class="page-eyebrow">Who I Am</div>
+        <h1 class="page-title">About Me</h1>
+        <p class="page-desc">A little bit about my story, what drives me, and how I think about design.</p>
+      </div>
+
+      <div class="aboutme-hero">
+        <div class="aboutme-photo">👩🏻</div>
+        <div class="aboutme-intro">
+          <div class="available-badge" style="margin-bottom:12px;"><span class="available-dot"></span>Available for work</div>
+          <div class="aboutme-name">Sara Zargan</div>
+          <div class="aboutme-title">Senior UI/UX Designer · Based in Tehran, Iran 🇮🇷</div>
+          <div class="aboutme-bio">I'm a product designer with 7+ years of experience crafting digital experiences that are both beautiful and functional. I specialize in SaaS products, mobile apps, and design systems — turning complex problems into intuitive, pixel-perfect interfaces.</div>
+        </div>
+      </div>
+
+      <div class="aboutme-stats">
+        <div class="stat-card"><div class="stat-number">7+</div><div class="stat-label">Years of Experience</div></div>
+        <div class="stat-card"><div class="stat-number">40+</div><div class="stat-label">Projects Delivered</div></div>
+        <div class="stat-card"><div class="stat-number">18</div><div class="stat-label">Happy Clients</div></div>
+      </div>
+
+      <div class="aboutme-section">
+        <div class="aboutme-section-title">My Story</div>
+        <p class="aboutme-text">I discovered my passion for design during my graphic design studies, where I fell in love with the intersection of aesthetics and usability. What started as a fascination with typography and visual composition gradually evolved into a deep obsession with how people interact with digital products.</p>
+        <p class="aboutme-text">Over the years I've worked with startups, agencies, and scale-ups — each experience sharpening my eye for what makes a product truly great. I believe the best design is almost invisible: it just feels right, flows naturally, and makes people's lives a little easier.</p>
+        <p class="aboutme-text">Today I focus on building products that are not just visually compelling, but grounded in real user needs and backed by thoughtful research. Whether I'm auditing an existing product or designing from a blank canvas, I bring the same curiosity and care to every pixel.</p>
+      </div>
+
+      <div class="aboutme-section">
+        <div class="aboutme-section-title">How I Work</div>
+        <div class="values-grid">
+          <div class="value-card"><div class="value-emoji">🎯</div><div><div class="value-title">User-Centered First</div><div class="value-desc">Every design decision starts with empathy. I ground my work in real user research and usability testing, not assumptions.</div></div></div>
+          <div class="value-card"><div class="value-emoji">🔗</div><div><div class="value-title">Design Systems Thinking</div><div class="value-desc">I build scalable, consistent components that empower teams to ship faster without sacrificing quality.</div></div></div>
+          <div class="value-card"><div class="value-emoji">🤝</div><div><div class="value-title">Cross-Team Collaboration</div><div class="value-desc">Great products live at the intersection of design, engineering, and business. I bridge these worlds fluently.</div></div></div>
+          <div class="value-card"><div class="value-emoji">✨</div><div><div class="value-title">Craft & Detail</div><div class="value-desc">I care deeply about the small things — micro-interactions, spacing, transitions — because they add up to exceptional experiences.</div></div></div>
+        </div>
+      </div>
+
+      <div class="aboutme-section">
+        <div class="aboutme-section-title">Outside of Design</div>
+        <p class="aboutme-text" style="margin-bottom:16px;">When I'm not designing, you'll find me exploring Tehran's art scene, experimenting with film photography, reading about cognitive psychology, or getting lost in a good sci-fi novel.</p>
+        <div class="interests-row">
+          <span class="interest-chip">📷 Film Photography</span>
+          <span class="interest-chip">📚 Sci-Fi Books</span>
+          <span class="interest-chip">🎨 Modern Art</span>
+          <span class="interest-chip">🧠 Psychology</span>
+          <span class="interest-chip">🎵 Indie Music</span>
+          <span class="interest-chip">☕ Specialty Coffee</span>
+          <span class="interest-chip">✈️ Traveling</span>
+        </div>
+      </div>
+
+      <div class="aboutme-cta">
+        <div class="cta-text">
+          <div class="cta-title">Let's build something great together.</div>
+          <div class="cta-sub">Open to freelance, full-time, and consulting opportunities.</div>
+        </div>
+        <button class="btn-light" onclick="navigate('contact')">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+          Get in Touch
+        </button>
+      </div>
+    </section>
+
+    <!-- ===== ABOUT PROJECT PAGE ===== -->
+    <section class="page" id="page-about">
+      <button class="about-back" onclick="navigate('projects')">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M5 12l7 7M5 12l7-7"/></svg>
+        Back to Projects
+      </button>
+
+      <div id="about-content"></div>
+    </section>
+
+  </main>
+</div>
+
+<script src="../Script.js"></script>
+</body>
+</html>
